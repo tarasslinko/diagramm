@@ -1,14 +1,10 @@
-package com.instabot;
+package com.diagramm;
 
-import com.instabot.client.Service;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Tag(name = "resource")
@@ -18,13 +14,14 @@ import javax.ws.rs.core.MediaType;
 public class Resource {
 
     @Inject
-    Service service;
+    SomeSystem someSystem;
 
     @GET
+    @Produces(MediaType.APPLICATION_XML)
     @Operation(summary = "Hello")
-    public String login() {
-        service.login();
-        return "";
+    @Path("{num}")
+    public String login(@PathParam("num") Integer num) {
+        return someSystem.prepareWorkspace(num);
     }
 
 }

@@ -11,8 +11,6 @@ repositories {
 
 dependencies {
     implementation(enforcedPlatform("io.quarkus:quarkus-universe-bom:2.6.2.Final"))
-    implementation(enforcedPlatform("org.junit:junit-bom:5.7.1"))
-    implementation(enforcedPlatform("org.testcontainers:testcontainers-bom:1.16.0"))
 
     implementation("io.quarkus:quarkus-flyway")
     implementation("io.quarkus:quarkus-hibernate-orm")
@@ -35,6 +33,11 @@ dependencies {
 
     implementation("javax.xml.bind:jaxb-api:2.3.0")
     implementation("org.glassfish.jaxb:jaxb-runtime:2.3.0")
+
+    implementation("com.structurizr:structurizr-core:1.10.0")
+    implementation("com.structurizr:structurizr-plantuml:1.6.3")
+    implementation("com.google.code.gson:gson:2.8.9")
+
 
     testImplementation("io.quarkus:quarkus-jacoco")
     testImplementation("io.quarkus:quarkus-junit5")
